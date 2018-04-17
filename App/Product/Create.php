@@ -4,12 +4,16 @@ use Predis\Client;
 
 class Create
 {
+    private $client;
+    private $name;
+    private $punctuation;
+    
 	/**
 	 * @param Client $client
 	 */
 	public function __construct(Client $client)
 	{
-
+            $this->client = $client;
 	}
 
 	/**
@@ -17,7 +21,7 @@ class Create
 	 */
 	public function create($name)
 	{
-
+            $this->name = $name;
 	}
 
 	/**
@@ -26,7 +30,8 @@ class Create
 	 */
 	public function rank($name, $punctuation)
 	{
-
+            $this->name = $name;
+            $this->punctuation = $punctuation;
 	}
 
 }
